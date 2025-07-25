@@ -1,4 +1,3 @@
-// productCard.jsx          ⟨src/components/productCard.jsx⟩
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 

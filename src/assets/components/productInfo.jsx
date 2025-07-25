@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
-
+import ProductSlider from './productSlider';
 
 function ProductDetails() {
   const { id } = useParams();
@@ -21,12 +21,16 @@ function ProductDetails() {
     </Spinner>
     </div>
   );
-
+  
   return (
     <div style={{ padding: '2rem' }}>
-      <div style={{ display:'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
+      <div style={{ display:'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column',marginBottom:'20px'}}>
         <h2>{product.title}</h2>
-        <img src={product.thumbnail} alt={product.title} width="300" />
+        {product.images && Array.isArray(product.images) && product.images.length > 1 ? (
+          <ProductSlider images={product.images} />
+        ) : (
+          <img src={product.thumbnail} alt={product.title} width="300" />
+        )}
       </div>
       <p><strong>Description:</strong> {product.description}</p>
       <p><strong>Price:</strong> ₹{Math.round(product.price * 86)}</p>
