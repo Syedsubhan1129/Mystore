@@ -19,8 +19,8 @@ function NavbarMain() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="home.jsx"><strong style={{ fontSize:'30px'}}>←</strong ></Navbar.Brand>
-        <Navbar.Brand href="home.jsx">My Store</Navbar.Brand>
+        <Navbar.Brand href="app.jsx"><strong style={{ fontSize:'30px'}}>←</strong ></Navbar.Brand>
+        <Navbar.Brand href="app.jsx">My Store</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
